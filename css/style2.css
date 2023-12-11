@@ -1,0 +1,374 @@
+/* Estilos comuns */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'pokemon'; /* Adicione a fonte 'pokemon' como padrão */
+}
+
+@font-face{
+    font-family: 'pokemon';
+    src: url('../font/PokemonClassic.ttf') format('truetype');
+}
+
+/* Estilos específicos para telas grandes */
+
+@media screen and (min-width: 768px) {
+    button {
+        font-size: 14px;
+        padding: 15px;
+        margin: 15px 0 0 5px;
+        font-weight: 900;
+        border: none;
+        background-color: white;
+        color: black;
+        border-radius: 25px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 5vw;
+        background-color: white;
+        padding: 30px;
+    }
+
+    .pokeApiImg img {
+        width: 300px;
+    }
+
+    .eu {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 100px 0 100px 0;
+        margin-bottom: 100px;
+        font-size: 14px;
+    }
+
+    .main {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .pokemonTeam {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #d9d9d9;
+        border-radius: 25px;
+        padding: 50px 20px;
+        margin-bottom: 30px;
+    }
+
+    .pokemonTeam h1 {
+        font-size: 12px;
+        padding: 8px 0 8px 0;
+        text-align: center;
+        margin-bottom: 50px;
+        width: 20%;
+    }
+
+    #showPokemonCaptured {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #showPokemonCaptured li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        text-transform: capitalize;
+        font-size: 10px;
+        font-weight: 900;
+        border-radius: 16px;
+        width: 200px;
+        height: 200px;
+        border: 4px solid var(--default-gray-800, #1F2937);
+        background: var(--default-gray-100, #F3F4F6);
+    }
+
+    #showPokemonCaptured img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: -10px;
+    }
+
+    #showPokemonCaptured button {
+        border: 3px solid var(--default-gray-800, #1F2937);
+    }
+
+    #showPokemon {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .pokemon-id {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+    .pokemon-name {
+        font-size: 10px;
+    }
+
+    .pokemon-type {
+        font-size: 8px;
+        border: 3px solid var(--default-gray-800, #1F2937);
+        border-radius: 25px;
+        margin-top: 25px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #showPokemon li {
+        text-transform: capitalize;
+        border-radius: 16px;
+        list-style: none;
+        width: auto;
+        height: auto;
+        margin: 50px 20px;
+    }
+
+    #showPokemon img {
+        width: 200px;
+        height: auto;
+        border-radius: 5%;
+        margin-bottom: 20px;
+        background-color: #d9d9d9;
+    }
+
+    #showPokemon button {
+        border: 3px solid var(--default-gray-800, #1F2937);
+    }
+
+    .pokemonDetail {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .showPokemonDetail {
+        display: none;
+        max-width: 350px;
+        height: 450px;
+        background-color: white;
+        padding: 10px 25px 0px 25px;
+        border-radius: 25px;
+        border: 5px solid var(--default-gray-800, #1F2937);
+        align-items: center;
+    }
+
+    #pokemon li {
+        display: grid;
+        justify-content: start;
+        align-items: start;
+        text-wrap: wrap;
+        list-style: none;
+        text-transform: capitalize;
+        font-size: 10px;
+        padding-bottom: 10px;
+    }
+
+    .esconder-div {
+        border-radius: 5%;
+        font-size: 15px;
+        padding: 3px 3px 7px 7px;
+        text-align: center;
+        border: none;
+        font-family: 'pokemon';
+    }
+
+    .esconder-div:hover {
+        background-color: #d9d9d9;
+        border-radius: 10px;
+    }
+
+    #pokemon img {
+        width: 200px;
+        height: auto;
+        justify-self: center;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos específicos para telas pequenas */
+
+@media screen and (max-width: 767px) {
+    button {
+        font-size: 10px;
+        padding: 10px;
+        margin: 10px 0 0 5px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .pokeApiImg img {
+        width: 200px;
+    }
+
+    .eu {
+        padding: 50px 0 50px 0;
+        font-size: 10px;
+    }
+
+    .main {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .pokemonTeam {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #d9d9d9;
+        border-radius: 25px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .pokemonTeam h1 {
+        font-size: 7px;
+        padding: 8px 0 8px 0;
+        text-align: center;
+        margin-bottom: 50px;
+        width: 20%;
+    }
+
+    #showPokemonCaptured {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #showPokemonCaptured li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        text-transform: capitalize;
+        font-size: 7px;
+        font-weight: 900;
+        border-radius: 16px;
+        width: 150px;
+        height: 150px;
+        border: 2px solid var(--default-gray-800, #1F2937);
+        background: var(--default-gray-100, #F3F4F6);
+    }
+
+    #showPokemonCaptured img {
+        width: 125px;
+        height: 125px;
+        margin-bottom: -10px;
+    }
+
+    #showPokemonCaptured button {
+        border: 2px solid var(--default-gray-800, #1F2937);
+    }
+
+    #showPokemon {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .pokemon-id {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .pokemon-name {
+        font-size: 7px;
+    }
+
+    .pokemon-type {
+        font-size: 6px;
+        border: 2px solid var(--default-gray-800, #1F2937);
+        border-radius: 25px;
+        margin-top: 10px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    #showPokemon li {
+        text-transform: capitalize;
+        border-radius: 16px;
+        list-style: none;
+        width: auto;
+        height: auto;
+        margin: 10px 20px;
+    }
+
+    #showPokemon img {
+        width: 125px;
+        height: auto;
+        border-radius: 5%;
+        margin-bottom: 20px;
+        background-color: #d9d9d9;
+    }
+
+    #showPokemon button {
+        border: 2px solid var(--default-gray-800, #1F2937);
+    }
+
+    .pokemonDetail {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .showPokemonDetail {
+        max-width: 350px;
+        height: 350px;
+    }
+
+    #pokemon li {
+        display: grid;
+        justify-content: start;
+        align-items: start;
+        text-wrap: wrap;
+        list-style: none;
+        text-transform: capitalize;
+        font-size: 8px;
+        padding-bottom: 10px;
+    }
+
+    .esconder-div {
+        border-radius: 5%;
+        font-size: 10px;
+        padding: 3px 3px 7px 7px;
+        text-align: center;
+        border: none;
+        font-family: 'pokemon';
+    }
+
+    .esconder-div:hover {
+        background-color: #d9d9d9;
+        border-radius: 10px;
+    }
+
+    #pokemon img {
+        width: 150px;
+        height: auto;
+        justify-self: center;
+        margin-bottom: 10px;
+    }
+}
